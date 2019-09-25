@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import * as ColorHash from 'color-hash';
+import ColorHash from 'color-hash';
 const colorHash = new ColorHash();
 
 export default {
