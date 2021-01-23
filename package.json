@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "color-hash": "^1.0.3",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.15",

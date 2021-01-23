@@ -2,32 +2,40 @@
   <div id="app">
     <h1>Vue Tree Browser</h1>
     <TreeBrowser 
-      :node="root"
+      :nodes="root"
       @onClick="nodeWasClicked"
     />
   </div>
 </template>
 
 <script>
-import TreeBrowser from './components/TreeBrowser.vue'
-import root from './root.json'
+import TreeBrowser from "./components/TreeBrowser.vue";
+import rootData from "./root.json";
 
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
-      root,
-    }
+      root: rootData,
+    };
+  },
+  watch: {
+    root: {
+      deep: true,
+      handler: (newRoot) => {
+        console.log(newRoot);
+      },
+    },
   },
   methods: {
     nodeWasClicked(node) {
-      alert(node.name);
-    }
+      //alert(node.name);
+    },
   },
   components: {
-    TreeBrowser
-  }
-}
+    TreeBrowser,
+  },
+};
 </script>
 
 <style>
@@ -37,7 +45,7 @@ body {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
